@@ -1,40 +1,28 @@
-const storeState = () => {
+
+
+export const storeState = () => {
   let currentState = {};
   return (stateChangeFunction = state => state) => {
     const newState = stateChangeFunction(currentState);
     currentState = {...newState};
     return newState;
-  }
-}
+  };
+};
 
-const stateControl = storeState();
+export const stateControl = storeState();
 
-const changeState = (prop) => {
+export const changeState = (prop) => {
   return (value) => {
     return (state) => ({
       ...state,
       [prop] : (state[prop] || 0) +  value
-    })
-  }
-}
-
-const feed = changeState("soil")(1);
-const blueFood = changeState("soil")(5);
-
-const hydrate = changeState("water")(1);
-const superWater = changeState("water")(5);
-
-$(document).ready(function() {
- 
-    $('#feed').click(function() {
-      const newState = stateControl(blueFood);
-      $('#soil-value').text(`Soil: ${newState.soil}`);
     });
-  
-  
-    $('#show-state').click(function() {
-    
-      const currentState = stateControl();
-      $('#soil-value').text(`Soil: ${currentState.soil}`);
-    });
-  });
+  };
+};
+
+export const feed = changeState("soil")(1);
+export const blueFood = changeState("soil")(5);
+
+export const hydrate = changeState("water")(1);
+export const superWater = changeState("water")(5);
+
