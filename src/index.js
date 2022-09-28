@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('#soil-value').text(`Soil: ${newState.soil}`);
   });
 
-  $('#feed').click(function() {
+  $('#feed-blue').click(function() {
     const newState = stateControl(blueFood);
     $('#soil-value').text(`Soil: ${newState.soil}`);
   });
@@ -21,7 +21,7 @@ $(document).ready(function() {
     $('#water-value').text(`Water: ${newState.water}`);
   });
 
-  $('#hydrate').click(function() {
+  $('#super-hydrate').click(function() {
     const newState = stateControl(superWater);
     $('#water-value').text(`Water: ${newState.water}`);
   });
@@ -30,12 +30,12 @@ $(document).ready(function() {
   $('#show-state').click(function() {
   
     const currentState = stateControl();
-    $('#soil-value').text(`Soil: ${currentState.soil}`);
+    $('#soil-value').text(`Soily: ${currentState.soil}`);
   });
 
   $('#show-state').click(function() {
   
     const currentState = stateControl();
-    $('#water-value').text(`Soil: ${currentState.water}`);
+    $('#water-value').text(`Watery: ${currentState.water}`);
   });
 });
